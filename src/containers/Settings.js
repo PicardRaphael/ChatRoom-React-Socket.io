@@ -1,25 +1,28 @@
 import { connect } from 'react-redux';
-import { OPEN_SETTINGS_PANEL, CLOSE_SETTINGS_PANEL } from 'src/store/actions';
+import {
+  OPEN_SETTINGS_PANEL,
+  CLOSE_SETTINGS_PANEL,
+  TRACK_USERNAME } from 'src/store/actions';
 
 import Settings from 'src/components/Settings';
 
-/* const mapStateToProps = state => ({
+const mapStateToProps = state => ({
   settings: {...state.settings},
   userData: {...state.userData}
-}); */
+});
 
-const mapStateToProps = state => {
+/* const mapStateToProps = state => {
   return { ...state.settings };
-};
+}; */
 
 const mapDispatchToProps = dispatch => ({
   /**
    * Track the current value of the username (pseudo) input.
    */
-  trackUsername: (evt) => {
+  trackUsername: (value) => {
     dispatch({
-      type: 'TRACK_USERNAME',
-      value: evt.target.value
+      type: TRACK_USERNAME,
+      value
     });
   },
 

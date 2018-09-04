@@ -8,7 +8,7 @@ import Message from 'src/components/Messages/Message';
   };
 }; */
 const mapStateToProps = (state, ownProps) => ({
-  own: state.settings.username === ownProps.user
+  own: state.userData.username === ownProps.user
 });
 
 const mapDispatchToProps = null;

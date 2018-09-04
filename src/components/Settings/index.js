@@ -20,8 +20,16 @@ class Settings extends React.Component {
     this.props.closePanel();
   };
 
+  handleUsernameChange = (evt) => {
+    const { value } = evt.target;
+    this.props.trackUsername(value);
+  };
+
   render() {
-    const { username, trackUsername, open, openPanel, closePanel } = this.props;
+    const { username } = this.props.userData;
+    const { openPanel, closePanel } = this.props;
+    const { open } = this.props.settings;
+    // const { username, trackUsername, open, openPanel, closePanel } = this.props;
     return (
       <div id='settings' className={open ? 'settings--open' : ''}>
         <div id="settings-toggle" onClick={open ? closePanel : openPanel}/>
@@ -35,7 +43,7 @@ class Settings extends React.Component {
             type="text"
             placeholder='Username'
             value={username}
-            onChange={trackUsername}
+            onChange={this.handleUsernameChange}
           />
           <button
             id='settings-submit'

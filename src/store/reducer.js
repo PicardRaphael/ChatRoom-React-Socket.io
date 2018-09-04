@@ -1,11 +1,16 @@
-import { OPEN_SETTINGS_PANEL, CLOSE_SETTINGS_PANEL } from './actions';
+import {
+  OPEN_SETTINGS_PANEL,
+  CLOSE_SETTINGS_PANEL,
+  TRACK_USERNAME } from './actions';
 
 const initialState = {
-  settings: {
-    open: false,
+  userData: {
     username: 'Anonymous'
   },
-
+  settings: {
+    open: false
+    // username: 'Anonymous'
+  },
   messages: [
     {
       id: 1,
@@ -44,6 +49,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         settings
+      };
+    }
+    case TRACK_USERNAME: {
+      const userData = {
+        ...state.userData,
+        username: action.value
+      };
+      return {
+        ...state,
+        userData
       };
     }
     default:
