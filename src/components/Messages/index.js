@@ -7,7 +7,7 @@ import React from 'react';
  * Local import
  */
 // Composants
-
+import Message from 'src/components/Messages/Message';
 // Styles et assets
 import './messages.sass';
 
@@ -17,14 +17,8 @@ import './messages.sass';
 const Messages = () => {
   return (
     <div id='messages'>
-      <div className="message">
-        <div className="message-user">Marie</div>
-        <div className="message-content">Salut</div>
-      </div>
-      <div className="message message--own">
-        <div className="message-user">John</div>
-        <div className="message-content">Hello</div>
-      </div>
+      <Message user='Philippe' content='Bonjour'/>
+      <Message user='Jd' content='De rien' own/>
     </div>
   );
 };
