@@ -1,9 +1,18 @@
 import { TOGGLE_LIGHT, SET_TIMER_LIGHT } from './actions';
 
 const initialState = {
-  message: 'Hello',
-  light: true,
-  timer: 1000
+  messages: [
+    {
+      id: 1,
+      user: 'Philippe',
+      content: 'Hello !'
+    },
+    {
+      id: 2,
+      user: 'JD',
+      content: 'De rien'
+    }
+  ]
 };
 
 /**
