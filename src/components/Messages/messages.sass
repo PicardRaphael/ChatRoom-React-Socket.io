@@ -1,0 +1,22 @@
+/**
+ * Import
+ */
+@import src/styles/vars
+
+#messages
+  border-top: 1px solid $border-color
+  height: calc(100vh - 10rem)
+  overflow-y: auto
+
+.message
+  padding: 1.5em 1em
+  border-bottom: 1px solid $border-color
+  &-user
+    font-size:  .8em
+    text-transform:  uppercase
+    margin-bottom: .3em
+  &-content
+    font-size: 1.2em
+  &--own
+    background-color: $bg-own-message
+    text-align: right

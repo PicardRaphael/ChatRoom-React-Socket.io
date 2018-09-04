@@ -2,35 +2,27 @@
  * Import
  */
 import React from 'react';
-import classNames from 'classnames';
 
 /**
  * Local import
  */
 // Composants
-
+import Messages from 'src/components/Messages';
+import Form from 'src/components/Form';
+import Settings from 'src/components/Settings';
 // Styles et assets
 import './app.sass';
 
 /**
  * Code
  */
-const App = ({ light, timer, toggleLight, setTimerLight }) => {
-  const className = classNames(
-    'app',
-    {
-      'app--night': !light
-    }
-  );
-
+const App = () => {
   return (
-    <div className={className}>
-      <h1 className="app-title">Modèle React</h1>
-      <p className="app-content">Hello tout le monde !</p>
-      <button onClick={toggleLight}>
-        { light ? 'Off' : 'On' }
-      </button>
-      <input type="number" step="500" value={timer} onChange={setTimerLight} />
+    <div id='app'>
+      <h1 id='app-title'>Chatroom</h1>
+      <Messages />
+      <Form />
+      <Settings />
     </div>
   );
 };
