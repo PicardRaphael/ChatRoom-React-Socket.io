@@ -16,7 +16,23 @@ import './settings.sass';
  */
 const Settings = () => {
   return (
-    <div id='settings'>
+    <div id='settings' className='settings--open'>
+      <div id="settings-toggle" />
+      <form
+        id='settings-form'
+        autoComplete='off'
+      >
+        <input
+          id='settings-input'
+          type="text"
+          placeholder='Username'
+        />
+        <button
+          id='settings-submit'
+          type='submit'>
+          OK
+        </button>
+      </form>
     </div>
   );
 };

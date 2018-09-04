@@ -2,3 +2,40 @@
  * Import
  */
 @import src/styles/vars
+
+#settings
+  position: absolute
+  top: 1.2rem
+  right: 0
+  display: flex
+  align-items: center
+  transform: translateX(15rem)
+  transition: .8s
+
+  &-form
+    width: 15rem
+  &-submit
+    text-transform: uppercase
+  &-submit,
+  &-input
+    padding: .8em
+    border: 0
+    border-bottom: 1px solid $border-color
+    background: transparent
+  &-toggle
+    &::before
+      content: '+'
+      font-size: 2em
+      display: block
+      font-weight: 700
+      cursor: pointer
+      margin-right: .3em
+      transition: transform .6s
+      transform: rotate(0deg)
+
+  &.settings--open
+    transform: translateX(0)
+  &.settings--open &-toggle
+      &::before
+        color: $form-color
+        transform: rotate(45deg)
