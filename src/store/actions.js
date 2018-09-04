@@ -1,17 +1,9 @@
 /**
  * Types d'action
  */
-export const TOGGLE_LIGHT = 'actions/TOGGLE_LIGHT';
-export const SET_TIMER_LIGHT = 'actions/SET_TIMER_LIGHT';
+export const OPEN_SETTINGS_PANEL = 'actions/OPEN_SETTINGS_PANEL';
+export const CLOSE_SETTINGS_PANEL = 'actions/CLOSE_SETTINGS_PANEL';
 
 /**
  * Action creators
  */
-export const toggleLight = () => ({
-  type: TOGGLE_LIGHT
-});
-
-export const setTimerLight = (value) => ({
-  type: SET_TIMER_LIGHT,
-  value
-});

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  * Local import
  */
 // Composants
-import Message from 'src/components/Messages/Message';
+import Message from 'src/containers/Message';
 // Styles et assets
 import './messages.sass';
 
