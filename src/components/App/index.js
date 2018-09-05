@@ -8,7 +8,7 @@ import React from 'react';
  */
 // Composants
 import Messages from 'src/containers/Messages';
-import Form from 'src/components/Form';
+import Form from 'src/containers/Form';
 import Settings from 'src/containers/Settings';
 // Styles et assets
 import './app.sass';

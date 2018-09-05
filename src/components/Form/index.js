@@ -14,18 +14,31 @@ import './form.sass';
 /**
  * Code
  */
-const Form = () => {
+const Form = ({ message, sendMessage, trackMessage }) => {
+  const handleMessageTyped = (evt) => {
+    const { value } = evt.target;
+    trackMessage(value);
+  };
+
+  const submitMessage = (evt) => {
+    evt.preventDefault();
+    sendMessage();
+  };
+
   return (
-    <div
-      id='form'
-      autoComplete='off'
+    <form
+      id="form"
+      autoComplete="off"
+      onSubmit={submitMessage}
     >
       <input
-        id='form-input'
+        id="form-input"
         type="text"
-        placeholder='Votre message'
+        placeholder="Votre message"
+        value={message}
+        onChange={handleMessageTyped}
       />
-    </div>
+    </form>
   );
 };
 

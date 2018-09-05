@@ -1,7 +1,11 @@
 import {
   OPEN_SETTINGS_PANEL,
   CLOSE_SETTINGS_PANEL,
-  TRACK_USERNAME } from './actions';
+  TRACK_USERNAME,
+  TRACK_MESSAGE,
+  SEND_MESSAGE,
+  MESSAGE_RECEIVED
+} from './actions';
 
 const initialState = {
   userData: {
@@ -11,14 +15,15 @@ const initialState = {
     open: false
     // username: 'Anonymous'
   },
+  message: '',
   messages: [
     {
-      id: 1,
+      id: 100,
       user: 'JD',
       content: 'Hello !'
     },
     {
-      id: 2,
+      id: 101,
       user: 'Anonymous',
       content: 'De rien'
     }
@@ -61,6 +66,25 @@ const reducer = (state = initialState, action = {}) => {
         userData
       };
     }
+    case TRACK_MESSAGE: {
+      return {
+        ...state,
+        message: action.value
+      };
+    }
+    case SEND_MESSAGE: {
+      return {
+        ...state,
+        message: initialState.message
+      };
+    }
+    case MESSAGE_RECEIVED: {
+      return {
+        ...state,
+        messages: [...state.messages, action.data]
+      };
+    }
+
     default:
       return state;
   }

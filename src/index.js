@@ -1,3 +1,4 @@
+
 /**
  * NPM import
  */
@@ -11,6 +12,7 @@ import { Provider } from 'react-redux';
  */
 import App from 'src/components/App';
 import store from 'src/store';
+import { WEBSOCKET_CONNECT } from 'src/store/actions';
 
 /**
  * Code
@@ -21,3 +23,4 @@ const rootComponent = (
   </Provider>
 );
 render(rootComponent, document.getElementById('root'));
+store.dispatch({ type: WEBSOCKET_CONNECT });

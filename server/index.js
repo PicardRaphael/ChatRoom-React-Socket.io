@@ -6,14 +6,12 @@ var join = require('path').join;
 var Server = require('http').Server;
 var socket = require('socket.io');
 
-
 /*
  * Vars
  */
 var app = express();
 var server = Server(app);
 var io = socket(server);
-
 
 /*
  * Express
@@ -26,7 +24,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 /*
  * Socket.io
  */
@@ -34,6 +31,7 @@ let id = 0;
 io.on('connection', function(socket) {
   console.log('>> socket.io - connected');
   socket.on('send_message', function(message) {
+    console.log('send_message', message);
     message.id = ++id;
     io.emit('send_message', message);
   });
@@ -45,4 +43,3 @@ io.on('connection', function(socket) {
 server.listen(3001, function() {
   console.log('listening on *:3001');
 });
-
